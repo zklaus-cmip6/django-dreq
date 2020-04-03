@@ -400,8 +400,8 @@ class Transfers(models.Model):
     uid = models.OneToOneField('Uids', models.DO_NOTHING, db_column='uid', primary_key=True)
     label = models.TextField(blank=True, null=True)
     title = models.TextField(blank=True, null=True)
-    frid = models.ForeignKey(Places, models.DO_NOTHING, db_column='frid', blank=True, null=True)
-    toid = models.ForeignKey(Places, models.DO_NOTHING, db_column='toid', blank=True, null=True)
+    frid = models.ForeignKey(Places, models.DO_NOTHING, db_column='frid', blank=True, null=True, related_name='transfers_from')
+    toid = models.ForeignKey(Places, models.DO_NOTHING, db_column='toid', blank=True, null=True, related_name='transfers_to')
     isoneway = models.BooleanField(db_column='isOneWay', blank=True, null=True)  # Field name made lowercase.
     signinverted = models.BooleanField(db_column='signInverted', blank=True, null=True)  # Field name made lowercase.
     mip = models.ForeignKey(Mip, models.DO_NOTHING, db_column='mip', blank=True, null=True)
