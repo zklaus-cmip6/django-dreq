@@ -33,7 +33,6 @@ class Cmorvar(models.Model):
     subgroup = models.TextField(db_column='subGroup', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'CMORvar'
 
 
@@ -45,7 +44,6 @@ class Cellmethods(models.Model):
     description = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'cellMethods'
 
 
@@ -67,7 +65,6 @@ class Experiment(models.Model):
     comment = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'experiment'
 
 
@@ -79,7 +76,6 @@ class Exptgroup(models.Model):
     ntot = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'exptgroup'
 
 
@@ -109,7 +105,6 @@ class Grids(models.Model):
     isgrid = models.TextField(db_column='isGrid', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'grids'
 
 
@@ -121,7 +116,6 @@ class Mip(models.Model):
     url = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'mip'
 
 
@@ -135,7 +129,6 @@ class Miptable(models.Model):
     comment = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'miptable'
 
 
@@ -149,7 +142,6 @@ class Modelconfig(models.Model):
     range = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'modelConfig'
 
 
@@ -161,7 +153,6 @@ class Objective(models.Model):
     mip = models.ForeignKey(Mip, models.DO_NOTHING, db_column='mip', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'objective'
 
 
@@ -173,7 +164,6 @@ class Objectivelink(models.Model):
     rid = models.ForeignKey('Requestlink', models.DO_NOTHING, db_column='rid', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'objectiveLink'
 
 
@@ -186,7 +176,6 @@ class Places(models.Model):
     pid = models.ForeignKey('self', models.DO_NOTHING, db_column='pid', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'places'
 
 
@@ -208,7 +197,6 @@ class Qcranges(models.Model):
     ok_max_mean_abs_status = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'qcranges'
 
 
@@ -225,7 +213,6 @@ class Remarks(models.Model):
     prov = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'remarks'
 
 
@@ -248,7 +235,6 @@ class Requestitem(models.Model):
     tslice = models.ForeignKey('Timeslice', models.DO_NOTHING, db_column='tslice', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'requestItem'
 
 
@@ -260,7 +246,6 @@ class Requestitemtarget(models.Model):
     mip = models.ForeignKey(Mip, models.DO_NOTHING, db_column='mip', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'requestItemTarget'
 
 
@@ -281,7 +266,6 @@ class Requestlink(models.Model):
     opar = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'requestLink'
 
 
@@ -295,7 +279,6 @@ class Requestvar(models.Model):
     mip = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'requestVar'
 
 
@@ -308,7 +291,6 @@ class Requestvargroup(models.Model):
     refnote = models.TextField(db_column='refNote', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'requestVarGroup'
 
 
@@ -322,7 +304,6 @@ class Spatialshape(models.Model):
     levelflag = models.BooleanField(db_column='levelFlag', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'spatialShape'
 
 
@@ -335,7 +316,6 @@ class Standardname(models.Model):
     first_version = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'standardname'
 
 
@@ -359,7 +339,6 @@ class Structure(models.Model):
     cmid = models.ForeignKey(Cellmethods, models.DO_NOTHING, db_column='cmid', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'structure'
 
 
@@ -373,7 +352,6 @@ class Tablesection(models.Model):
     refnote = models.TextField(db_column='refNote', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tableSection'
 
 
@@ -384,7 +362,6 @@ class Tags(models.Model):
     description = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'tags'
 
 
@@ -397,7 +374,6 @@ class Temporalshape(models.Model):
     description = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'temporalShape'
 
 
@@ -417,7 +393,6 @@ class Timeslice(models.Model):
     child = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'timeSlice'
 
 
@@ -433,7 +408,6 @@ class Transfers(models.Model):
     vid = models.ForeignKey(Cmorvar, models.DO_NOTHING, db_column='vid', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'transfers'
 
 
@@ -442,7 +416,6 @@ class Uids(models.Model):
     table_name = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'uids'
 
 
@@ -454,7 +427,6 @@ class Units(models.Model):
     text = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'units'
 
 
@@ -472,7 +444,6 @@ class Var(models.Model):
     unid = models.ForeignKey(Units, models.DO_NOTHING, db_column='unid', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'var'
 
 
@@ -486,7 +457,6 @@ class Varchoice(models.Model):
     optionlist = models.TextField(db_column='optionList', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'varChoice'
 
 
@@ -500,7 +470,6 @@ class Varchoicelinkc(models.Model):
     cid = models.ForeignKey(Varchoice, models.DO_NOTHING, db_column='cid', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'varChoiceLinkC'
 
 
@@ -513,7 +482,6 @@ class Varchoicelinkr(models.Model):
     rank = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'varChoiceLinkR'
 
 
@@ -525,7 +493,6 @@ class Varrellnk(models.Model):
     rid = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'varRelLnk'
 
 
@@ -537,5 +504,4 @@ class Varrelations(models.Model):
     relation = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'varRelations'
