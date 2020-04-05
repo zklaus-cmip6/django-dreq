@@ -1,0 +1,7 @@
+name: django-dreq
+channels:
+  - conda-forge
+dependencies:
+  - django
+  - git
+  - python
